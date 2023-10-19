@@ -1,0 +1,47 @@
+* {
+padding: 0;
+margin: 0;
+font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+:root {
+/* Dark Theme Colors */
+--primary-dark: #152c46; /* Dark Blue */
+--secondary-dark: #FF6B6B; /* Dark Red */
+--background-dark: #1D1D1D; /* Dark Gray */
+--text-dark: #FFFFFF; /* White */
+--accent-dark: #51CF66; /* Dark Green */
+
+/* Common Colors */
+--link-color: var(--primary-dark);
+--neutral-color: #B8B8B8; /* Light Gray */
+--cta-color: #FFD166; /* Yellow */
+}
+
+main {
+    position: absolute;
+    margin-top: 9.15rem;
+    width: 100%;
+    z-index: 998;
+}
+ 
+section {
+min-height: 90vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background-color: var(--background-dark);
+color: var(--text-dark);
+position: relative;
+max-width: 100%;
+}
+
+section:nth-child(odd) {
+    background-color: var(--secondary-dark);
+    color: var(--text-dark);
+}

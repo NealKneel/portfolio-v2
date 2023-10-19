@@ -6,13 +6,70 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!-- Poppins font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> <!-- Font Awesome CDN-->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script> <!-- Typed.js -->
-    <link rel="stylesheet" type="text/css" href="./css/home.css"> <!-- CSS -->
-    <script defer src="./js/home.js"></script> <!-- Scripts -->
+    <link rel="stylesheet" type="text/css" href="./css/navbar.css"> <!-- Home CSS  -->
+    <link rel="stylesheet" type="text/css" href="./css/home.css"> <!-- CSS  -->
+    <script defer src="./js/home.js"></script> <!-- Home Scripts -->
+    <script defer src="./js/navbar.js"></script> <!-- Navbar Scripts -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> <!-- Email.js -->
     <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon"> <!-- Favicon -->
     <title>Portfolio V2</title>
 </head>
 <body>
+  <nav>
+    <ul class="sidebar">
+      <li onclick="hideSidebar()">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" fill="var(--text-dark)"/></svg></a>
+      </li>
+      <li>
+        <a href="#">Home</a>
+      </li>
+      <li>
+        <a href="#">About Me</a>
+      </li>
+      <li>
+        <a href="#">Projects</a>
+      </li>
+      <li>
+        <a href="#">Contact</a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="#">
+          <img src="./assets/images/favicon.png" alt="">
+        </a>
+      </li>
+      <li class="hideOnMobile"><a href="#">Home</a></li>
+      <li class="hideOnMobile"><a href="#">About Me</a></li>
+      <li class="hideOnMobile"><a href="#">Projects</a></li>
+      <li class="hideOnMobile"><a href="#">Contact</a></li>
+      <li class="menu-button" onclick=showSidebar()>
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" fill="var(--text-dark)"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+      <section id="home">
+          <h1>Home</h1>
+        </section>
+      
+        <section id="about">
+          <h2>About Me</h2>
+        </section>
+      
+        <section id="projects">
+          <h2>Projects</h2>
+        </section>
+      
+        <section id="contacts">
+          <h2>Contacts</h2>
+        </section>
+  </main>
     
 </body>
 </html>
