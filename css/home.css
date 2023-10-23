@@ -1,3 +1,4 @@
+/**********GENERAL**********/
 * {
 padding: 0;
 margin: 0;
@@ -5,7 +6,7 @@ font-family: 'Poppins', sans-serif;
 }
 
 body {
-    min-height: 100vh;
+    height: 100%;
 }
 
 :root {
@@ -15,6 +16,7 @@ body {
 --background-dark: #1D1D1D; /* Dark Gray */
 --text-dark: #FFFFFF; /* White */
 --accent-dark: #51CF66; /* Dark Green */
+--neon-color: #00dfc4;
 
 /* Common Colors */
 --link-color: var(--primary-dark);
@@ -24,24 +26,191 @@ body {
 
 main {
     position: absolute;
-    margin-top: 9.15rem;
+    margin-top: 3.5rem;
     width: 100%;
     z-index: 998;
 }
  
 section {
-min-height: 90vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background-color: var(--background-dark);
-color: var(--text-dark);
-position: relative;
-max-width: 100%;
+    padding: 0 10% 0 10%;
+    height: 57.66rem;
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+    width: 80%;
+    /* overflow-x: hidden; */
 }
 
 section:nth-child(odd) {
-    background-color: var(--secondary-dark);
+    background-color: var(--primary-dark);
     color: var(--text-dark);
+}
+
+.social-icons {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--primary-dark);
+    padding: .5rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    height: 20rem;
+    right: 0;
+    top: 38%;
+}
+
+.social-icons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .2rem;
+    height: 2rem;
+    width: 2rem;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+}
+.social-icons a:hover {
+    transform: scale(1.5);
+}
+
+/**********HOME SECTION**********/
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 55%;
+    width: 45%;
+    height: 100%;
+}
+
+.home-content .p1 {
+    line-height: 1;
+    font-size: 3rem;
+}
+
+.home-content .p1 b{
+    color: var(--cta-color);
+    font-size: 5rem;
+}
+
+.home-content .p2 {
+    font-weight: bolder;
+    font-size: 2rem;
+    margin: 3% 0 3% 0;
+}
+
+.home-content .p2 b{
+    color: var(--cta-color);
+}
+
+.home-content .p3 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+.svg-container {
+    position: absolute;
+    margin-right: 10%;
+    left: 10%;
+    height: 20%;
+    width: 40%;
+}
+
+.svg-container embed {
+    height: 100%;
+    width: 100%;
+}
+
+.svg-container:hover .attribution {
+    display: block;
+    opacity: 1;
+    transform: translateX(-170%) scale(1);
+}
+
+.attribution {
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    background-color: var(--primary-dark);
+    border-radius: 1rem;
+    padding: 1rem;
+    top: 40%;
+    left: 9rem;
+    width: 10rem;
+    transform: translateX(0%) scale(0);
+    transition: all .3s ;
+}
+
+.attribution a {
+    color: var(--cta-color);
+    text-decoration: none;
+}
+
+/**********ABOUT-ME SECTION **********/
+.fixed-image {
+    position: absolute;
+    right: 10rem;
+    width: 35rem;
+    height: 56.3rem;
+    border:  1px solid #51CF66;
+    transition: all .3s;
+    flex: 1;
+}
+
+.fixed-image img{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/**********MEDIA QUERIES**********/
+
+@media screen and (max-width: 800px) {
+
+    section {
+        height: 100vh;
+    }
+
+    .social-icons {
+        display: none;
+    }
+
+    .home-content {
+        margin-left: 0%;
+        padding-top: 10%;
+        width: 100%;
+        height: auto;
+    }
+    
+    .home-content .p1 {
+        font-size: 3rem;
+    }
+
+    .home-content .p1 b{
+        font-size: 3.5rem;
+    }
+    
+    .home-content .p2 {
+        font-size: 1.1rem;
+    }
+    
+    .home-content .p2 b{
+        color: var(--cta-color);
+    }
+    
+    .home-content .p3 {
+        margin-top: 1%;
+        width: 100%;
+        font-size: 1rem;
+    }
+    .svg-container {
+        position: relative;
+        margin-right: 0%;
+        top: 0;
+        left: 0%;
+        height: 40%;
+        width: 100%;
+    }    
 }

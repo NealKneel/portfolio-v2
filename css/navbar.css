@@ -1,10 +1,12 @@
 nav, header {
     position: fixed;
-    top: 0;
+    display: flex;
+    align-items: center;
     width: 100%;
-    background-color: var(--background-dark);
+    height: 2.5rem;
+    background-color: var(--primary-dark);
     z-index: 999;
-    padding: 3rem 0 3rem 0;
+    padding: .5rem 0 .5rem 0;
     box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 5px
 }
 
@@ -18,12 +20,12 @@ nav ul {
     height: 100%;
     list-style: none;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 nav .hideOnMobile {
     margin: 0 1rem;
-    height: 50px;
+    height: 100%;
     list-style: none;
     transition: border-top 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
     border-top: 1px solid transparent;
@@ -31,7 +33,6 @@ nav .hideOnMobile {
 }
 
 nav ul li a {
-    height: 100%;
     width: 10rem;
     font-size: 1.3rem;
     text-decoration: none;
@@ -40,44 +41,83 @@ nav ul li a {
     align-items: center;
     text-transform: uppercase;
     color: var(--text-dark);
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;
+    outline: none;
+    border: none;
+    position: relative;
+    background: none;
+    cursor: pointer;
 
 }
 
-/* Style for the active link */
-nav li .nav-buttons.active {
-    border-top: 1px solid var(--cta-color);
-    border-bottom: 1px solid var(--cta-color);
-}
-
+/* https://uiverse.io/Dashrath-Sharma/wet-zebra-95 */
+ 
 .active {
     color: var(--cta-color);
-    transition: color .3s;
-}
-
-ul li .nav-buttons:before {
-    content: "";
+  }
+  
+  .nav-buttons span {
     position: absolute;
-    top: 3.05rem;
-    width: 10rem;
-    height: 3.14rem;
-    border-top: 1px solid var(--cta-color);
-    border-bottom: 1px solid var(--cta-color);
-    transform: scaleX(0);
-    opacity: 0;
-    transition: .3s;
-}
+    background: var(--cta-color);
+    transition: .5s;
+  }
 
-ul li .nav-buttons:hover:before {
-    transform: scaleX(1);
-    opacity: 1;
-}
+  .nav-buttons.active span:nth-child(1),.nav-buttons.active span:nth-child(3){
+    width: 2px;
+    height: 100%;
+  }
 
+  .nav-buttons.active span:nth-child(2),.nav-buttons.active span:nth-child(4){
+    height: 2px;
+    width: 100%;
+  }
+  
+  .nav-buttons span:nth-child(1) {
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 0%;
+  }
+ 
+  .nav-buttons:hover span:nth-child(1) {
+    height: 100%;
+  }
+  
+  .nav-buttons span:nth-child(2) {
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+  }
+  
+  .nav-buttons:hover span:nth-child(2) {
+    width: 100%;
+  }
+  
+  .nav-buttons span:nth-child(3) {
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 0%;
+  }
+  
+  .nav-buttons:hover span:nth-child(3) {
+    height: 100%;
+  }
+  
+  .nav-buttons span:nth-child(4) {
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 1px;
+  }
+  
+  .nav-buttons:hover span:nth-child(4) {
+    width: 100%;
+  }
 nav .logo-container {
     position: absolute;
-    width: 9rem;
-    height: 9rem;
+    width: 4rem;
+    height: 4rem;
     top: 0;
     z-index: 1000;
     transition: transform .4s ease-in-out;
@@ -86,6 +126,12 @@ nav .logo-container {
 nav .logo-container img {
     width: 100%;
     height: 100%;
+    transition: transform .1s ease-in-out;
+}
+
+nav .logo-container img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(3px 3px 5px #7a7a7a);
 }
 
 nav li a img {
@@ -145,8 +191,8 @@ nav li a img {
 .menu-button {
     display: none;
     position: absolute;
-    left: -6rem;
-    top: 3.5rem;
+    left: -4rem;
+    top: .5rem;
 }
 
 #checkbox {
