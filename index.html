@@ -13,6 +13,7 @@
     <script defer src="./js/home.js"></script> <!--Home Scripts-->
     <script defer src="./js/navbar.js"></script> <!--Navbar Scripts-->
     <script src="./js/swiper-bundle.min.js"></script> <!--Swiper JS-->
+    <script defer src="./js/email.js"></script> <!--Emailr JS-->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script> <!--Typed.js-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> <!--Email.js-->
     <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon"> <!--Favicon-->
@@ -156,8 +157,18 @@
 
     <section id="about">
 
-      <div class="about-me-content">
-        
+      <div class="skills">
+        <h4>Skills:</h4>
+        <h4>Skills:</h4>
+        <h4>Skills:</h4>
+        <h4>Skills:</h4>
+        asdasd
+        <div class="skills-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+        </div>
+      </div>
+
+      <div class="about-me-content">        
         <div class="my-img">
           <img src="./assets/images/grad-pic.jpg" alt="Graduation Picture">
         </div>
@@ -287,7 +298,43 @@
     </section>
 
     <section id="contacts">
-      <h2>Contacts</h2>
+      <div class="contacts-content">
+        <div class="form-container fade-in">
+          <div class="contact-container left">
+              <div class="inputBox left">
+                  <input type="text" id="user_name" autocomplete="off" required="required">
+                  <span class="input-span">Name</span>
+              </div>
+              <div class="inputBox left">
+                  <input type="tel" id="user_number" required="required">
+                  <span class="input-span">Contact Number</span>
+          
+              </div>
+              <div class="inputBox left">
+                  <input type="email" id="user_email" autocomplete="off" required="required">
+                  <span class="input-span" id="span_email"></i>Email</span>
+              </div>
+              <div class="inputBox left">
+                  <input type="text" id="subject" required="required">
+                  <span class="input-span">Subject</span>
+              </div>
+              <div class="inputBox left">
+                  <textarea id="message" required="required"></textarea>
+                  <span class="input-span">Message</span>
+              </div>
+              <div class="contact-button left">
+                  <button class="send-mail-btn" id="sendMailBtn" onclick="SendMail()">Send</button>
+              </div>
+          </div>
+          
+          <div class="image-container right">
+              <img src="./assets/images/email.png" alt="Freepik Image">
+              <span class="attribution">
+                  <a href="https://storyset.com/communication" target="_blank">Communication illustrations</a><br>by Storyset
+              </span>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <footer>

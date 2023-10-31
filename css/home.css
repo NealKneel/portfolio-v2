@@ -210,6 +210,39 @@ section:nth-child(odd) {
 
 /**********ABOUT-ME SECTION **********/
 
+.skills {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 50%;
+  height: 57.6rem;
+  left: -50%;
+  background-color: var(--neutral-color);
+  color: var(--text-dark);
+  z-index: 5;
+}
+
+.skills-button {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  position: absolute;
+  background-color: var(--primary-dark);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  height: 10%;
+  width: 5%;
+  left: 100%;
+}
+
+.skills-button svg {
+  height: 40%;
+}
+
 .about-me-content {
     display: flex;
     flex-direction: row;
@@ -429,7 +462,7 @@ section:nth-child(odd) {
 }
 .back-card .back-content .card-button a {
   text-decoration: none;
-  color: var(--color-6);
+  color: var(--text-dark);
 }
 .back-card .back-content .card-button:hover {
   transform: scale(1.03);
@@ -456,6 +489,170 @@ section:nth-child(odd) {
 .proj2.front-content img {
   width: 70%;
 }
+
+/*************CONTACT**************/
+
+#contacts {
+  display: flex;
+  justify-content: center;
+}
+
+.contacts-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* https://www.youtube.com/watch?v=BMphVl9suxA */
+
+.form-container {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
+  background: #1d2b3a;
+  border-radius: 1rem;
+}
+
+.attribution {
+  opacity: 0;
+  position: absolute;
+  color: #fff;
+  padding: 5px;
+  top: 15rem;
+  left: 9rem;
+  width: 10rem;
+  transform: translateX(0%);
+  transition: .5s all;
+}
+
+.attribution a {
+  color: #00dfc4;
+
+}
+.image-container:hover .attribution {
+  display: block;
+  opacity: 1;
+  transform: translateX(150%);
+}
+
+.image-container img {
+  padding-top: 3rem;
+  width: 25rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #1d2b3a;
+  border-radius: 1rem;
+  gap: 1rem;
+  padding: 1rem;
+  height: 30rem;
+  width: 25rem;
+
+}
+
+.inputBox {
+  position: relative;
+  width: 20rem;
+}
+
+.inputBox input, textarea {
+  height: 1.5rem;
+  width: 100%;
+  padding: .5rem;
+  border: 1px solid #ccc;
+  background: #1d2b3a;
+  border-radius: .5rem;
+  outline: none;
+  color:  var(--text-dark);
+  font-size: 1rem;
+  transition: 0.5s;
+}
+
+.inputBox textarea {
+  height: 10rem;
+}
+
+.inputBox .input-span {
+  position: absolute;
+  top: 0;        
+  padding: .5rem 0 0 1rem;
+  pointer-events: none;
+  color:  var(--text-dark);
+  text-transform: uppercase;
+  transition: .2s;
+}
+
+.inputBox input:valid ~ .input-span,
+.inputBox input:focus ~ .input-span,
+.inputBox textarea:valid ~ .input-span,
+.inputBox textarea:focus ~ .input-span {
+  color:  #00dfc4;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.75rem;
+  padding: 0 10px;
+  background: #1d2b3a;
+  border-left: 1px solid #00dfc4;
+  border-right: 1px solid #00dfc4;
+  letter-spacing: .1rem;
+}
+
+.inputBox input:valid,
+.inputBox input:focus,
+.inputBox textarea:valid,
+.inputBox textarea:focus {
+  border: 1px solid #00dfc4;
+}
+
+.invalidEmail {
+  position: absolute;
+  top: 0;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.75rem;
+  padding: 0 10px;
+  text-transform: uppercase;
+  background: #1d2b3a;
+  color: var(--text-dark);
+  border-left: 1px solid var(--text-dark);
+  border-right: 1px solid var(--text-dark);
+  letter-spacing: .1rem;
+  transition: .5s all;
+}
+
+.contact-button button {
+  background-color: #9e9e9e;
+  font-family: 'Poppins';
+  color: var(--text-dark);
+  height: 2rem;
+  width: 10rem;
+  border: #ccc;
+  border-radius: .5rem;
+}
+
+.contact-button .send-mail-btn {
+  background-color: var(--color-5);
+  font-family: 'Poppins';
+  color: var(--color-1);
+  height: 2rem;
+  width: 10rem;
+  border: #ccc;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-button .send-mail-btn:hover {
+  background-color: #00dfc4;
+  color: var(--text-dark);
+  transform: scale(1.1);
+  transition: all .1s;
+  box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
 
 /**********MEDIA QUERIES**********/
 
