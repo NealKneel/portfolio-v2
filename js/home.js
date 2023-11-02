@@ -105,3 +105,13 @@ var swiper = new Swiper(".mySwiper", {
       const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
       return emailRegex.test(email);
   }
+
+  //////////////////SKILLS BUTTON////////////////////////
+
+  
+  const skillsBtn = document.getElementById('skillsBtn');
+  const skillsContainer = document.getElementById('skillsContainer');
+
+  skillsBtn.addEventListener('click', () => {
+    skillsContainer.classList.toggle('show-skills');
+});
