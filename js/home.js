@@ -111,7 +111,16 @@ var swiper = new Swiper(".mySwiper", {
   
   const skillsBtn = document.getElementById('skillsBtn');
   const skillsContainer = document.getElementById('skillsContainer');
+  const icon = document.getElementById('skillsBtnIcon');
+
+  let rotated = false;
 
   skillsBtn.addEventListener('click', () => {
     skillsContainer.classList.toggle('show-skills');
+    if (rotated) {
+        icon.style.transform = "rotate(0deg)";
+      } else {
+        icon.style.transform = "rotate(180deg)";
+    }
+    rotated = !rotated;
 });

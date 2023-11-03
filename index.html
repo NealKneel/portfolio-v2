@@ -5,26 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!--Poppins font-->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> Font Awesome CDN -->
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script> <!--Typed.js-->
     <link rel="stylesheet" type="text/css" href="./css/navbar.css"> <!--Navbar CSS-->
     <link rel="stylesheet" href="./css/swiper-bundle.min.css"> <!--Swiper CSS-->
     <link rel="stylesheet" type="text/css" href="./css/home.css"> <!--Home CSS-->
     <script defer src="./js/home.js"></script> <!--Home Scripts-->
     <script defer src="./js/navbar.js"></script> <!--Navbar Scripts-->
-    <script src="./js/swiper-bundle.min.js"></script> <!--Swiper JS-->
-    <script defer src="./js/email.js"></script> <!--Emailr JS-->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script> <!--Typed.js-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> <!--Email.js-->
+
+    <!--Email JS-->
+    
+    <script defer src="./js/email.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!--ScrollReveal JS-->
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="./js/swiper-bundle.min.js"></script> <!--Swiper JS-->
+
     <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon"> <!--Favicon-->
     <title>Portfolio V2</title>
 </head>
 
 <body>
   <nav>
-    <a href="#home" class="logo-container nav-link">
-      <img src="./assets/images/favicon.png" alt="Logo">
-    </a>
     <ul class="sidebar">
       <div class="menu-button">
         <input id="checkbox" type="checkbox">
@@ -79,7 +83,7 @@
   </nav>
 
   <main>
-    <div class="social-icons">
+    <div class="social-icons scroll-reveal-1 right">
         <div class="link-wrapper">
           <a href="https://www.facebook.com/" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/>
@@ -137,16 +141,16 @@
     </div>
     <section class="main-section" section id="home">
       <div class="home-content">       
-        <p class="p1">
+        <p class="p1 scroll-reveal-2 right">
           Hi, I'm <br><b>Neal Andrus!</b></br>
         </p>
-        <p class="p2">
+        <p class="p2 scroll-reveal-3 right">
           <span class="auto-type"></span>
         </p>
-        <p class="p3">
+        <p class="p3 scroll-reveal-4 right">
           Welcome to my website! Here you can find out more about me and what I can do. Feel free to scroll around or click on the navigation links to explore my website.
         </p>
-        <div class="svg-container">
+        <div class="svg-container scroll-reveal-1 top">
           <embed src="./assets/svg/developer-activity-animate.svg" type="image/svg+xml" width="100%" height="100%"/>
           <span class="attribution">
             <a href="https://storyset.com/work" target="_blank"><strong>Work illustrations</strong> by Storyset</a>
@@ -157,163 +161,235 @@
 
     <section class="main-section" id="about">
 
-      <div class="skills" id="skillsContainer">
-
-        <section>
-          <div class="timeline-items">
-            <div class="timeline-item">
-              <div class="timeline-section">
-                <p>EDUCATION</p>
-                <p>EDUCATION</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">2023</div>
-              <div class="timeline-content">
-                <h1>College</h1>
-                <h3>Batangas State University</h3>
-                <p>S.Y. 2019-2023</p>
-                <p>Bachelor of Science in Information Technology</p>
-                <p>Major in Business Analytics</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">2019</div>
-              <div class="timeline-content">
-                <h3>Senior High School</h3>
-                <h3>Batangas College of Arts and Sciences, Inc.</h3>
-                <p>S.Y. 2017-2019</p>
-                <p>STEM Track</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">2017</div>
-              <div class="timeline-content">
-                <h3>Senior High School</h3>
-                <h3>Batangas College of Arts and Sciences, Inc.</h3>
-                <p>S.Y. 2013-2017</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">2013</div>
-              <div class="timeline-content">
-                <h3>Elementary</h3>
-                <h3>Roman Ozaeta Memorial School</h3>
-                <p>S.Y. 2007-2013</p>
-              </div>
+        <div class="skillsContainer" id="skillsContainer">
+          <div class="skills" >
+            <div class="skills-margin">
+              <section>
+                <div class="timeline-items">
+                  <div class="timeline-item">
+                    <div class="timeline-section">
+                      <p>EDUCATION</p>
+                      <p>EDUCATION</p>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                      <h1>College</h1>
+                      <h3>Batangas State University</h3>
+                      <p>S.Y. 2019-2023</p>
+                      <p>Bachelor of Science in Information Technology</p>
+                      <p>Major in Business Analytics</p>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2019</div>
+                    <div class="timeline-content">
+                      <h3>Senior High School</h3>
+                      <h3>Batangas College of Arts and Sciences, Inc.</h3>
+                      <p>S.Y. 2017-2019</p>
+                      <p>STEM Track</p>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2017</div>
+                    <div class="timeline-content">
+                      <h3>Senior High School</h3>
+                      <h3>Batangas College of Arts and Sciences, Inc.</h3>
+                      <p>S.Y. 2013-2017</p>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2013</div>
+                    <div class="timeline-content">
+                      <h3>Elementary</h3>
+                      <h3>Roman Ozaeta Memorial School</h3>
+                      <p>S.Y. 2007-2013</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="experience-container">
+                  <table>
+                    <colgroup>
+                      <col style="width: 50%;"></col>
+                      <col style="width: 50%;"></col>
+                    </colgroup>
+                    <tr>
+                      <td class="title" colspan="2">EXPERIENCE</td>
+                    </tr>
+                    <tr>
+                      <td class="job" colspan="2"><h3>Digital Transformation Center</h3></td>
+                    </tr>
+                    <tr>
+                      <td class="column-left">Web Development</td>
+                      <td class="column-right">Alangilan, Batangas City, Batangas</td>
+                    </tr>
+                    <tr>
+                      <td class="column-left">OJT Internship</td>
+                      <td class="column-right">January 27, 2023 - May 24, 2023</td>
+                    </tr>
+                  </table>
+                </div>
+              </section>
+                <div class="timeline-items">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-date"><br><br><br></div>
+                </div>
+              <section>
+                <div class="experience-container">
+                  <table>
+                    <col style="width: 25%;"></col>
+                    <col style="width: 25%;"></col>
+                    <col style="width: 25%;"></col>
+                    <col style="width: 25%;"></col>
+                    <tr>
+                      <td class="title" colspan="8">SKILLS</td>
+                    </tr>
+                    <tr>
+                      <td class="job" colspan="8"><h3>Programming</h3></td>
+                    </tr>
+                    <tr>
+                      <td class="pl-icons">
+                        <a href="https://www.flaticon.com/free-icons/html" target="_blank" title="html icons">
+                          <img src="./assets/icons/html-5.png" alt="HTML icon">
+                        </a>
+                        <p class="attribution-pl">
+                          Html icon created by Freepik - Flaticon
+                        </p>
+                      </td>
+                      <td class="pl-icons">
+                        <a href="https://www.flaticon.com/free-icons/python" target="_blank" title="python icons">
+                          <img src="./assets/icons/python.png" alt="Python icon">
+                        </a>
+                        <p class="attribution-pl">
+                          Python icon created by Freepik - Flaticon
+                        </p>
+                      </td>
+                      <td class="pl-icons">
+                        <a href="https://www.flaticon.com/free-icons/css" target="_blank" title="css icons">
+                          <img src="./assets/icons/css-3.png" alt="CSS icon">
+                        </a>
+                        <p class="attribution-pl">
+                          CSS icon created by Pixel perfect - Flaticon
+                        </p>
+                      </td>
+                      <td class="pl-icons">
+                        <a href="https://www.flaticon.com/free-icons/php" target="_blank" title="php icons">
+                          <img src="./assets/icons/php.png" alt="PHP icon">
+                        </a>
+                        <p class="attribution-pl">
+                          PHP icon created by Freepik - Flaticon
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="pl-icons">
+                        <a href="https://www.flaticon.com/free-icons/mysql" target="_blank" title="mysql icons">
+                          <img src="./assets/icons/mysql.png" alt="MySQL icon">
+                        </a>
+                        <p class="attribution-pl">
+                          MySQL icon created by Freepik - Flaticon
+                        </p>
+                      </td>
+                      <td class="pl-icons">
+                        <a href="https://www.flaticon.com/free-icons/javascript" target="_blank" title="javascript icons">
+                          <img src="./assets/icons/js.png" alt="JavaScript icon">
+                        </a>
+                        <p class="attribution-pl">
+                          JavaScript icon created by Freepik - Flaticon
+                        </p>
+                      </td>
+                      <td class="pl-icons">
+                        <a href="https://www.flaticon.com/free-icons/coding" target="_blank" title="coding icons">
+                          <img src="./assets/icons/c-.png" alt="Coding icon">
+                        </a>
+                        <p class ="attribution-pl">
+                          Coding icon created by Freepik - Flaticon
+                        </p>
+                      </td>
+                      <td class="pl-icons">
+                        <a href="https://www.flaticon.com/free-icons/java" target="_blank" title="java icons">
+                          <img src="./assets/icons/java.png" alt="Java icon">
+                        </a>
+                        <p class="attribution-pl">
+                          Java icon created by Freepik - Flaticon
+                        </p>
+                      </td>
+                    </tr>
+                    </table>
+                    <table>
+                      <col style="width: 20%;"></col>
+                      <col style="width: 20%;"></col>
+                      <col style="width: 20%;"></col>
+                      <col style="width: 20%;"></col>
+                      <col style="width: 20%;"></col>
+                    <tr>
+                      <td class="job" colspan="8"><h3>Media Editing</h3></td>
+                    </tr>
+                    <tr>
+                      <td class="pl-icons">
+                        <a href="https://www.flaticon.com/free-icons/premiere" target="_blank" title="Premiere icons">
+                          <img src="./assets/icons/premiere.png" alt="Premiere icon">
+                        </a>
+                        <p class="attribution-pl">Premiere icons created by riajulislam - Flaticon</p>
+                      </td>
+                      <td class="pl-icons">
+                        <a target="_blank" href="https://icons8.com/icon/3GKqWSMI7o9v/filmora" target="_blank" title="Filmora icons">
+                          <img src="./assets/icons/icons8-filmora-48.png" alt="Filmora icon">
+                        </a>
+                        <p class="attribution-pl">Filmora icon by Icons8</p>
+                      </td>
+                      <td class="pl-icons">
+                        <a target="_blank" href="https://icons8.comundefined">
+                          <img src="./assets/icons/icons8-picsart-48.png" alt="CSS icon">
+                        </a>
+                        <p class="attribution-pl">Picsart icon by Icons8</p>
+                      </td>
+                      <td class="pl-icons">
+                        <icon target="_blank" href="https://icons8.com/icon/iWw83PVcBpLw/canva">
+                          <img src="./assets/icons/icons8-canva-48.png" alt="PHP icon">
+                        </a>
+                        <p class="attribution-pl">Canva icon by Icons8</p>
+                      </td>
+                      <td class="pl-icons">
+                        <a href="https://www.flaticon.com/free-icons/figma" target="_blank" title="Figma icons">
+                          <img src="./assets/icons/figma.png" alt="Figma icon">
+                        </a>
+                        <p class="attribution-pl">Figma icons created by Freepik - Flaticon</p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </section>
             </div>
           </div>
-        </section>
-        <section>
-          <div class="experience-container">
-            <table>
-              <colgroup>
-                <col style="width: 50%;"></col>
-                <col style="width: 50%;"></col>
-              </colgroup>
-              <tr>
-                <td class="title" colspan="2">EXPERIENCE</td>
-              </tr>
-              <tr>
-                <td class="job" colspan="2"><h3>Digital Transformation Center</h3></td>
-              </tr>
-              <tr>
-                <td class="column-left">Web Development</td>
-                <td class="column-right">Alangilan, Batangas City, Batangas</td>
-              </tr>
-              <tr>
-                <td class="column-left">OJT Internship</td>
-                <td class="column-right">January 27, 2023 - May 24, 2023</td>
-              </tr>
-            </table>
-          </div>
-        </section>
-          <div class="timeline-items">
-            <div class="timeline-date"> </div>
-          </div>
-        <section>
-          <div class="experience-container">
-            <table>
-              <tr>
-                <td class="title" colspan="8">SKILLS</td>
-              </tr>
-              <tr>
-                <td class="job" colspan="8"><h3>Programming</h3></td>
-              </tr>
-              <tr>
-                <td class="pl-icons">
-                  <img src="./assets/icons/html-5.png" alt="HTML icon">
-                  <div class="attribution-pl">
-                    <a href="https://www.flaticon.com/free-icons/html" title="html icons">Html icon created by Freepik - Flaticon</a>
-                  </div>
-                </td>
-                <td class="pl-icons">
-                  <img src="./assets/icons/python.png" alt="Python icon">
-                  <div class="attribution-pl">
-                    <a href="https://www.flaticon.com/free-icons/python" title="python icons">Python icon created by Freepik - Flaticon</a>
-                  </div>
-                </td>
-                <td class="pl-icons">
-                  <img src="./assets/icons/css-3.png" alt="CSS icon">
-                  <div class="attribution-pl">
-                    <a href="https://www.flaticon.com/free-icons/css" title="css icons">CSS icon created by Pixel perfect - Flaticon</a>
-                  </div>
-                </td>
-                <td class="pl-icons">
-                  <img src="./assets/icons/php.png" alt="PHP icon">
-                  <div class="attribution-pl">
-                    <a href="https://www.flaticon.com/free-icons/php" title="php icons">PHP icon created by Freepik - Flaticon</a>
-                  </div>
-                </td>
-                <td class="pl-icons">
-                  <img src="./assets/icons/mysql.png" alt="MySQL icon">
-                  <div class="attribution-pl">
-                    <a href="https://www.flaticon.com/free-icons/mysql" title="mysql icons">MySQL icon created by Freepik - Flaticon</a>
-                  </div>
-                </td>
-                <td class="pl-icons">
-                  <img src="./assets/icons/js.png" alt="JavaScript icon">
-                  <div class="attribution-pl">
-                    <a href="https://www.flaticon.com/free-icons/javascript" title="javascript icons">JavaScript icon created by Freepik - Flaticon</a>
-                  </div>     
-                </td>
-                <td class="pl-icons">            
-                  <img src="./assets/icons/c-.png" alt="Coding icon">
-                  <div class="attribution-pl">
-                    <a href="https://www.flaticon.com/free-icons/coding" title="coding icons">Coding icon created by Freepik - Flaticon</a>
-                  </div>
-                </td>
-                <td class="pl-icons">
-                  <img src="./assets/icons/java.png" alt="Java icon">
-                  <div class="attribution-pl">
-                    <a href="https://www.flaticon.com/free-icons/java" title="java icons">Java icon created by Freepik - Flaticon</a>
-                  </div>
-                </td>
-            </table>
-          </div>
-        </section>
-
-        <div class="skills-button" id="skillsBtn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+          <button class="skills-button scroll-reveal-3 left" id="skillsBtn">
+            <svg id="skillsBtnIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/></svg>
+          </button>
         </div>
-      </div>
 
       <div class="about-me-content">        
-        <div class="my-img">
+        <div class="my-img scroll-reveal-1 left">
           <img src="./assets/images/grad-pic.jpg" alt="Graduation Picture">
         </div>
 
         <div class="about-description">
-          <h2>About Me</h2>
-          <p>
+          <h2 class="scroll-reveal-1 bottom">About Me</h2>
+          <p class="scroll-reveal-2 bottom">
             I am <b>Neal Andrus M. Mancilla</b>, a graduate of Batangas State University, holding a <b>Bachelor of Science in Information Technology</b> degree I completed my studies in 2023 with a major in Business Analytics.
             <br><br>
+          </p>
+          <p class="scroll-reveal-3 bottom">
             In my roles during my Capstone and OJT experiences, I primarily focused on <b>backend</b> development. However, I am also capable of contributing to the <b>frontend</b> development to a certain degree.
             <br><br>
+          </p>
+          <p class="scroll-reveal-4 bottom">
             I am always eager to learn new programming languages to expand my skill set, specially when it comes to <b>web development</b>. My dedication and strong work ethic, a keen attention to detail coupled with my ability to adapt and contribute effectively within a team, makes me a flexible and valuable asset in various roles.
           </p>
         </div>
@@ -322,13 +398,11 @@
     </section>
 
     <section class="main-section" id="projects">
-      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-prev scroll-reveal-1 left"></div>
       <div class="projects-content">   
-        
-
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">     
-              <div class="swiper-slide">
+              <div class="swiper-slide scroll-reveal-3 right">
                   <div class="wrapper">
                   <div class="single-card">
                       <div class="proj1 front-card">
@@ -350,7 +424,7 @@
                   </div>
                   </div>
               </div>
-              <div class="swiper-slide">
+              <div class="swiper-slide scroll-reveal-4 right">
                   <div class="wrapper">
                   <div class="single-card">
                       <div class="proj2 front-card">
@@ -372,7 +446,7 @@
                   </div>
                   </div>
               </div>
-              <div class="swiper-slide">
+              <div class="swiper-slide scroll-reveal-5 right">
                 <div class="empty-wrapper">
                   <div class="single-card">
                       <div class="empty-card">
@@ -421,14 +495,14 @@
                   </div>
               </div>
           </div>
-          <div class="swiper-pagination"></div>
+          <div class="swiper-pagination scroll-reveal-1 bottom"></div>
         </div>
 
 
 
 
       </div>
-      <div class="swiper-button-next"></div>
+      <div class="swiper-button-next scroll-reveal-1 right"></div>
     </section>
 
     <section class="main-section" id="contacts">
@@ -471,8 +545,22 @@
       </div>
     </section>
   </main>
-  <footer>
+  <!-- <footer>
     <h1 style="display: flex; align-items: center; justify-content: center;">Footer</h1>
-  </footer>
+  </footer> -->
+
+  <script>
+    ScrollReveal({ distance: '5rem', reset: true });
+    ScrollReveal().reveal('.top', {origin: 'top'});
+    ScrollReveal().reveal('.right', {origin: 'right'});
+    ScrollReveal().reveal('.bottom', {origin: 'bottom'});
+    ScrollReveal().reveal('.left', {origin: 'left'});
+    ScrollReveal().reveal('.scroll-reveal-1');
+    ScrollReveal().reveal('.scroll-reveal-2', {delay: 500});
+    ScrollReveal().reveal('.scroll-reveal-3', {delay: 600});
+    ScrollReveal().reveal('.scroll-reveal-4', {delay: 700});
+    ScrollReveal().reveal('.scroll-reveal-5', {delay: 800});
+  </script>
+
 </body>
 </html>

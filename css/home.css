@@ -56,7 +56,9 @@ main {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    background-color: var(--primary-dark);
+    background: rgba(109,125,153,0.45);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     padding: .5rem;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
@@ -209,23 +211,71 @@ main {
 }
 
 /**********ABOUT-ME SECTION **********/
+
+
+
+.skills-margin {
+  margin: 2rem 0;
+}
+
+.skillsContainer {
+  position: absolute;
+  left: 0;
+  top: 26.7%;
+  width: 50rem;
+  height: 20%;
+  transform: translateX(-95%);
+  transition: all .3s ease-in-out;
+  z-index: 1;
+}
+
 .skills {
   position: absolute;
-  top: 26.5%;
+  left: 0;
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 50rem;
-  /* left: -50%; */
+  width: 95%;
+  height: 100%;
   background: rgba(109,125,153,0.45);
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
-  border: 1px solid rgba(109,125,153,0.225);
-  border-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   color: var(--text-dark);
   z-index: 1;
   transition: left .5s ease-in-out;
   overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 2;
+}
+
+.skills-button {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  top: 45%;
+  right: 0;
+  height: 10%;
+  width: 5%;
+  border: none;
+  cursor: pointer;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: rgba(109,125,153,0.45);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  color: var(--text-dark);
+}
+
+.skills-button svg {
+  width: 1rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+.show-skills {
+  transform: translateX(0);
 }
 
 .skills section {
@@ -233,30 +283,6 @@ main {
   align-content: center;
   justify-content: center;
 }
-
-.skills-button {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  position: absolute;
-  background-color: var(--primary-dark);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  height: 10%;
-  width: 5%;
-  left: 100%;
-}
-
-.skills-button svg {
-  height: 40%;
-}
-
-.show-skills {
-  left: 0;
-}
-
 .timeline-section p{
   margin: 0 1rem 0 1rem;
   position: absolute;
@@ -306,12 +332,12 @@ main {
 	position: absolute;
 	left: calc(50% - 8px);
 	border-radius: 50%;
-	top:100px;
+	top:50px;
   z-index: 4;
 }
 .timeline-date{
   position: relative;
-  top: 88px;
+  top: 45px;
 	font-size: 1.2rem;
 	color: var(--cta-color);
 	margin:6px 0 15px;
@@ -374,10 +400,11 @@ table, tr ,th, td {
 }
 
 td img {
-  height: 70%;
-  width: 70%;
+  height: 40%;
+  width: 40%;
 }
 .title {
+  padding: 1rem 0;
   text-align: center;
   font-size: 1.5rem;
   color: var(--cta-color);
@@ -391,7 +418,7 @@ td img {
 
 .pl-icons img{
   display: block;
-  margin: 0 auto;
+  margin: 1rem auto;
   transition: all .1s ease-in-out;
 }
 
