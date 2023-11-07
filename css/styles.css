@@ -33,27 +33,29 @@ body {
 }
 
 footer {
-  position: absolute;
-  left: 0;
-  right: 0;
+  background-color: #333; /* Background color for the footer */
+  color: #fff; /* Text color */
+  text-align: center;
+  padding: 1rem;
+}
+
+.attribution {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
-  height: 5%;
-  background-color: var(--secondary-dark);
-  color: var(--text-dark);
-}
-
-footer a {
+  font-size: 10px;
   font-weight: 100;
-  transform: scale(1);
-  transition: all .3s ease-in-out;
 }
 
-footer a:hover {
-  transform: scale(1.05);
+.attribution a {
+  color: #fff; /* Link color */
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
 }
 
 
