@@ -50,15 +50,13 @@ footer {
 }
 
 .attribution a {
-  color: #fff; /* Link color */
+  color: var(--cta-color);
   text-decoration: none;
 }
 
 .attribution a:hover {
   text-decoration: underline;
 }
-
-
 
 a {
   text-decoration: none;
@@ -230,6 +228,95 @@ flex-direction: row;
   width: 100%;
 }
 
+.download-btn {
+  position: absolute;
+  right: 5%;
+  top: 22%;
+  cursor: pointer;
+}
+
+.Btn {
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--neutral-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.11);
+}
+
+.svgIcon {
+  fill: var(--text-dark);
+}
+
+.icon2 {
+  width: 1.5rem;
+  height: .5rem;
+  border-bottom: 2px solid var(--text-dark);
+  border-left: 2px solid var(--text-dark);
+  border-right: 2px solid var(--text-dark);
+}
+
+.tooltip {
+  position: absolute;
+  left: -11rem;
+  opacity: 0;
+  color: white;
+  padding: 5px 10px;
+  border: 1px solid var(--text-dark);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: .2s;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+}
+
+.Btn:hover .tooltip {
+  opacity: 1;
+  transition-duration: .3s;
+}
+
+.Btn:hover {
+  background-color: var(--cta-color);
+  transition-duration: .3s;
+}
+
+.Btn:hover .icon2 {
+  border-bottom: 2px solid rgb(255, 255, 255);
+  border-left: 2px solid rgb(255, 255, 255);
+  border-right: 2px solid rgb(255, 255, 255);
+}
+
+.Btn:hover .svgIcon {
+  fill: rgb(255, 255, 255);
+  animation: slide-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@media  screen and (max-width: 1320px) {
+  .download-btn {
+    right: 10%;
+  }
+}
+
 @media screen and (max-width: 768px) {
 
 .home-content {
@@ -370,9 +457,8 @@ flex-direction: row;
   align-content: center;
   left: 100%;
   height: 15%;
-  width: 20%;
+  width: 3rem;
   cursor: pointer;
-  transform: rotate(0deg);
   background: rgba(109,125,153,0.45);
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
@@ -380,16 +466,99 @@ flex-direction: row;
   border-bottom-right-radius: 1rem;
 }
 
-.btn-animation {
-  transform: rotate(540deg);
+#rightBtn {
+  transition: all .3s ease-in-out;
+}
 
+.skills {
+  overflow: auto;
+}
+
+.skills .item-container h1{
+  margin: 1.5rem 0;
+  padding: .5rem 0;
+  text-align: center;
+  border-top: 1px solid var(--text-dark);
+  border-bottom: 1px solid var(--text-dark);
+  width: 100%;
+}
+
+.skills .item-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.tech-stack-container, .media-editing-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.skills .item-container .skills-item {
+  flex: 0 0 calc(50%);
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.skills .item-container .skills-item img {
+  width: 60%;
+}
+
+@media (max-width: 1024px) {
+  .skills .item-container h1{
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    width: 15%;
+    border-top-right-radius: 0;
+  }
+
+  .skills-btn {
+    top: 0;
+  }
+
+  .skills .item-container h1{
+    font-size: 1rem;
+  }
+  .skills .item-container .skills-item {
+    flex: 0 0 calc(100%);
+  }
+}
+
+@media (max-width: 459px) {
+  .skills-container {
+    width: 5rem;
+    top: 27%;
+  }
+}
+
+@media (max-width: 320px) {
+  .skills .item-container h1{
+    font-size: 1rem;
+  }
+
+  .skills-container {
+    width: 5rem;
+    top: 25.5%;
+  }
+
+  .skills-btn {
+    height: 4rem;
+  }
 }
 
 .about-content {
-display: flex;
-flex-wrap: wrap;
-flex-direction: row;
-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 100%;
 }
 
 .about-left, .about-right {

@@ -122,8 +122,14 @@ const skillsBtn = document.getElementById('skillsBtn');
 const skillsContainer = document.getElementById('skillsContainer');
 const rightBtn = document.getElementById('rightBtn');
 
+let rotated = false;
+
 skillsBtn.addEventListener('click', () => {
     skillsContainer.classList.toggle('show-skills');
-    rightBtn.classList.toggle('btn-animation');
-  });
-  
+    if (rotated) {
+        rightBtn.style.transform = "rotate(0deg)";
+        } else {
+        rightBtn.style.transform = "rotate(180deg)";
+    }
+    rotated = !rotated;
+});
