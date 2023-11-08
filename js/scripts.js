@@ -115,3 +115,15 @@ ScrollReveal().reveal('.scroll-reveal-2', {delay: 500});
 ScrollReveal().reveal('.scroll-reveal-3', {delay: 600});
 ScrollReveal().reveal('.scroll-reveal-4', {delay: 700});
 ScrollReveal().reveal('.scroll-reveal-5', {delay: 800});
+
+////////////SKILLS//////////////
+
+const skillsBtn = document.getElementById('skillsBtn');
+const skillsContainer = document.getElementById('skillsContainer');
+const rightBtn = document.getElementById('rightBtn');
+
+skillsBtn.addEventListener('click', () => {
+    skillsContainer.classList.toggle('show-skills');
+    rightBtn.classList.toggle('btn-animation');
+  });
+  

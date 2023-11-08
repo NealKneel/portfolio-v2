@@ -44,7 +44,6 @@ const menuBtn = document.getElementById('menuBtn');
 const sideBar = document.getElementById('sideBar');
 const sideBarButtons = document.getElementById('side-bar');
 
-sideBarOpacity = false;
 menuBtn.addEventListener('click', () => {
   sideBar.classList.toggle('show-sideBar');
   sideBarButtons.classList.toggle('show-buttons') 
