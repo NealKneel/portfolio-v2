@@ -281,7 +281,7 @@ nav ul li a {
   }
 
   nav {
-    background-color: transparent;
+    opacity: 0;
     box-shadow: none;
   }
 

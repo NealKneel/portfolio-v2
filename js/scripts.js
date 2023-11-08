@@ -133,3 +133,14 @@ skillsBtn.addEventListener('click', () => {
     }
     rotated = !rotated;
 });
+
+const scrollTopButton = document.getElementById('scrollTopButton');
+
+// Add a click event listener to the button
+scrollTopButton.addEventListener('click', () => {
+    // Scroll the window to the top
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
