@@ -281,8 +281,7 @@ nav ul li a {
   }
 
   nav {
-    opacity: 0;
-    box-shadow: none;
+    height: 3.5%;
   }
 
   .menu {
