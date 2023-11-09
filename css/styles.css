@@ -1077,6 +1077,7 @@ width: 70%;
 
 .inputBox textarea {
 height: 80%;
+resize: none;
 }
 
 .inputBox input, textarea {
