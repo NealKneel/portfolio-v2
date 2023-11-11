@@ -6,6 +6,76 @@ var typed = new Typed(".auto-type", {
     loop: true
 })
 
+///////////////////ABOUT////////////////////
+
+// function scrollToContent(contentId) {
+//     const element = document.getElementById(contentId);
+//     if (element) {
+//       element.scrollIntoView({ 
+//         behavior: 'smooth',
+//         block: 'nearest',
+//     });
+//     }
+//   }
+
+function scrollToContent(contentId) {
+    const element = document.getElementById(contentId);
+    centerElementInView('.about-content');
+    if (element) {
+        element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'nearest',
+        });
+
+    }
+}
+
+function centerElementInView(selector) {
+    const element = document.querySelector(selector);
+    if (element) {
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const elementHeight = element.offsetHeight;
+        const offset = (viewportHeight - elementHeight) / 2;
+        
+        window.scrollTo({
+            top: element.offsetTop - offset,
+            behavior: 'smooth',
+        });
+    }
+}
+
+  
+  
+
+////////////SKILLS//////////////
+
+const skillsBtn = document.getElementById('skillsBtn');
+const skillsContainer = document.getElementById('skillsContainer');
+const rightBtn = document.getElementById('rightBtn');
+
+let rotated = false;
+
+skillsBtn.addEventListener('click', () => {
+    skillsContainer.classList.toggle('show-skills');
+    if (rotated) {
+        rightBtn.style.transform = "rotate(0deg)";
+        } else {
+        rightBtn.style.transform = "rotate(180deg)";
+    }
+    rotated = !rotated;
+});
+
+const scrollTopButton = document.getElementById('scrollTopButton');
+
+// Add a click event listener to the button
+scrollTopButton.addEventListener('click', () => {
+    // Scroll the window to the top
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
 //////////////////////////SWIPER.JS///////////////////////////////
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
@@ -115,32 +185,3 @@ ScrollReveal().reveal('.scroll-reveal-2', {delay: 500});
 ScrollReveal().reveal('.scroll-reveal-3', {delay: 600});
 ScrollReveal().reveal('.scroll-reveal-4', {delay: 700});
 ScrollReveal().reveal('.scroll-reveal-5', {delay: 800});
-
-////////////SKILLS//////////////
-
-const skillsBtn = document.getElementById('skillsBtn');
-const skillsContainer = document.getElementById('skillsContainer');
-const rightBtn = document.getElementById('rightBtn');
-
-let rotated = false;
-
-skillsBtn.addEventListener('click', () => {
-    skillsContainer.classList.toggle('show-skills');
-    if (rotated) {
-        rightBtn.style.transform = "rotate(0deg)";
-        } else {
-        rightBtn.style.transform = "rotate(180deg)";
-    }
-    rotated = !rotated;
-});
-
-const scrollTopButton = document.getElementById('scrollTopButton');
-
-// Add a click event listener to the button
-scrollTopButton.addEventListener('click', () => {
-    // Scroll the window to the top
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});

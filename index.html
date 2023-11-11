@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./css/swiper-bundle.min.css"> <!--Swiper CSS-->
   <link rel="stylesheet" href="./css/styles.css"> <!--Styles-->
   <link rel="stylesheet" href="./css/nav.css"> <!--Navbar Styles-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"> <!--FontAwesome-->
   <script src="./js/swiper-bundle.min.js"></script> <!--Swiper JS-->
   <script defer src="./js/scripts.js"></script> <!--Scripts-->
   <script defer src="./js/nav.js"></script> <!--Navbar Scripts-->
@@ -227,27 +228,97 @@
           </div>
         </div>
       </div>
-      <div class="about-content">
-        <div class="about-left">
-          <div class="my-img scroll-reveal-1 left">
+  <div class="about-content">
+    <div class="about-nav">
+      <button class="nav-btn mobile-hide" onclick="scrollToContent('aboutMe')">About Me &nbsp <i class="fa-regular fa-id-badge"></i></button>
+      <button class="nav-btn" onclick="scrollToContent('aboutMe')"><i class="fa-regular fa-id-badge"></i></button>
+      <button class="nav-btn mobile-hide" onclick="scrollToContent('eduBackground')">Educational Background &nbsp <i class="fa-solid fa-graduation-cap"></i></button>
+      <button class="nav-btn" onclick="scrollToContent('eduBackground')"><i class="fa-solid fa-graduation-cap"></i></button>
+      <button class="nav-btn mobile-hide" onclick="scrollToContent('experience')">Experience &nbsp <i class="fa-solid fa-briefcase"></i></button>
+      <button class="nav-btn" onclick="scrollToContent('experience')"><i class="fa-solid fa-briefcase"></i></button>
+    </div>
+    <div class="about-items">
+      <div id="aboutMe" class="content">
+        <h2>About Me</h2>
+          <div class="image-container">
             <img src="./assets/images/grad-pic.jpg" alt="Graduation Picture">
           </div>
-        </div>
-        <div class="about-right">
-          <h2 class="scroll-reveal-1 bottom">About Me</h2>
-          <p class="scroll-reveal-2 bottom">
-            I am <b>Neal Andrus M. Mancilla</b>, a graduate of Batangas State University, holding a <b>Bachelor of Science in Information Technology</b> degree I completed my studies in 2023 with a major in Business Analytics.
+          <p>
+            I am <b>Neal Andrus M. Mancilla</b>, a graduate of Batangas State University, holding a <b>Bachelor of Science in Information Technology</b> degree. I completed my studies in 2023 with a major in Business Analytics.
             <br><br>
           </p>
-          <p class="scroll-reveal-3 bottom">
+          <p>
             In my roles during my Capstone and OJT experiences, I primarily focused on <b>backend</b> development. However, I am also capable of contributing to the <b>frontend</b> development to a certain degree.
             <br><br>
           </p>
-          <p class="scroll-reveal-4 bottom">
+          <p>
             I am always eager to learn new programming languages to expand my skill set, specially when it comes to <b>web development</b>. My dedication and strong work ethic, a keen attention to detail coupled with my ability to adapt and contribute effectively within a team, makes me a flexible and valuable asset in various roles.
           </p>
+      </div>
+      <div id="eduBackground" class="content">
+        <div class="timeline-title">
+          <h1>Educational Background</h1>
+        </div>
+        <div class="container">
+          <div class="timeline">
+            <ul>
+              <li>
+                <div class="timeline-content">
+                  <h3 class="date">2019-2023</h3>
+                  <h1>College</h1>
+                  <p class="school">Batangas State University, Alangilan Campus</p>
+                  <p>Bachelor of Science in Information Technology</p>
+                  <p>Major in Business Analytics</p>
+                </div>
+              </li>
+              <li>
+                <div class="timeline-content">
+                  <h3 class="date">2017-2019</h3>
+                  <h1>Senior Highschool</h1>
+                  <p class="school">Batangas College of Arts and Sciences, Inc.</p>
+                  <p>STEM</p>
+                </div>
+              </li>
+              <li>
+                <div class="timeline-content">
+                  <h3 class="date">2013-2017</h3>
+                  <h1>Junior Highschool</h1>
+                  <p class="school">Batangas College of Arts and Sciences, Inc.</p>
+                </div>
+              </li>
+              <li>
+                <div class="timeline-content">
+                  <h3 class="date">2007-2013</h3>
+                  <h1>Elementary</h1>
+                  <p class="school">Roman Ozaeta Memorial School</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+      <div id="experience" class="content">
+        <div class="timeline-title">
+          <h1>Experience/s</h1>
+        </div>
+        <div class="container">
+          <div class="timeline">
+            <ul>
+              <li>
+                <div class="timeline-content">
+                  <h3 class="date">2023</h3>
+                  <h1>OJT Intern</h1>
+                  <p class="school">Digital Transformation Center</p>
+                  <p>Web Backend Developer</p>
+                  <p>500 hours</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     </section>
 
     <section class="main-section" id="projects">
@@ -387,7 +458,7 @@
                   <button class="send-mail-btn" id="sendMailBtn" onclick="SendMail()">Send</button>
               </div>
           </div>
-          <div class="image-container">
+          <div class="contact-image-container">
               <img src="./assets/images/email.png" alt="Freepik Image">
           </div>
         </div>
