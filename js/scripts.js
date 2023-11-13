@@ -18,6 +18,30 @@ var typed = new Typed(".auto-type", {
 //     }
 //   }
 
+// SwiperJS
+
+var swiper = new Swiper(".aboutSwiper", {
+    pagination: {
+      el: ".mobile-pagination-hide",
+      clickable: true,
+      renderBullet: function (index, className) {
+        const titles = ["ABOUT ME", "EDUCATIONAL BACKGROUND", "EXPERIENCES"];
+        return '<span class="mobile-hide ' + className + '">' + titles[index] + "</span>";
+      },
+    },
+  });
+
+var swiper = new Swiper(".aboutSwiper", {
+    pagination: {
+      el: ".mobile-pagination-show",
+      clickable: true,
+      renderBullet: function (index, className) {
+        const titles = ["<i class='fa-regular fa-id-badge'></i>", "<i class='fa-solid fa-graduation-cap'></i>", "<i class='fa-solid fa-briefcase'></i>"];
+        return '<span class="mobile-show ' + className + '">' + titles[index] + "</span>";
+      },
+    },
+  });
+
 function scrollToContent(contentId) {
     const element = document.getElementById(contentId);
     centerElementInView('.about-content');
@@ -44,27 +68,6 @@ function centerElementInView(selector) {
     }
 }
 
-  
-  
-
-////////////SKILLS//////////////
-
-const skillsBtn = document.getElementById('skillsBtn');
-const skillsContainer = document.getElementById('skillsContainer');
-const rightBtn = document.getElementById('rightBtn');
-
-let rotated = false;
-
-skillsBtn.addEventListener('click', () => {
-    skillsContainer.classList.toggle('show-skills');
-    if (rotated) {
-        rightBtn.style.transform = "rotate(0deg)";
-        } else {
-        rightBtn.style.transform = "rotate(180deg)";
-    }
-    rotated = !rotated;
-});
-
 const scrollTopButton = document.getElementById('scrollTopButton');
 
 // Add a click event listener to the button
@@ -76,7 +79,7 @@ scrollTopButton.addEventListener('click', () => {
     });
 });
 
-//////////////////////////SWIPER.JS///////////////////////////////
+//////////////////////////PROJECTS///////////////////////////////
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     grid: {
