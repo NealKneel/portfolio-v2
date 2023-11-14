@@ -20,24 +20,36 @@ var typed = new Typed(".auto-type", {
 
 // SwiperJS
 
-var swiper = new Swiper(".aboutSwiper", {
-    pagination: {
-      el: ".mobile-pagination-hide",
-      clickable: true,
-      renderBullet: function (index, className) {
-        const titles = ["ABOUT ME", "EDUCATIONAL BACKGROUND", "EXPERIENCES"];
-        return '<span class="mobile-hide ' + className + '">' + titles[index] + "</span>";
-      },
-    },
-  });
+// var swiper = new Swiper(".aboutSwiper", {
+//     pagination: {
+//       el: ".mobile-pagination-hide",
+//       clickable: true,
+//       renderBullet: function (index, className) {
+//         const titles = ["ABOUT ME", "EDUCATIONAL BACKGROUND", "EXPERIENCES"];
+//         return '<span class="mobile-hide ' + className + '">' + titles[index] + "</span>";
+//       },
+//     },
+//   });
 
-var swiper = new Swiper(".aboutSwiper", {
+// var swiper = new Swiper(".aboutSwiper", {
+//     pagination: {
+//       el: ".mobile-pagination-show",
+//       clickable: true,
+//       renderBullet: function (index, className) {
+//         const titles = ["<i class='fa-regular fa-id-badge'></i>", "<i class='fa-solid fa-graduation-cap'></i>", "<i class='fa-solid fa-briefcase'></i>"];
+//         return '<span class="mobile-show ' + className + '">' + titles[index] + "</span>";
+//       },
+//     },
+//   });
+
+  var swiper = new Swiper(".aboutSwiper", {
     pagination: {
-      el: ".mobile-pagination-show",
+      el: ".about-pagination",
       clickable: true,
       renderBullet: function (index, className) {
-        const titles = ["<i class='fa-regular fa-id-badge'></i>", "<i class='fa-solid fa-graduation-cap'></i>", "<i class='fa-solid fa-briefcase'></i>"];
-        return '<span class="mobile-show ' + className + '">' + titles[index] + "</span>";
+        const titles = ["<p class='mobile-hide'>ABOUT ME</p>", "<p class='mobile-hide'>EDUCATIONAL BACKGROUND</p>", "<p class='mobile-hide'>EXPERIENCES</p>"];
+        const icons = ["<i class='mobile-show fa-regular fa-id-badge'></i>", "<i class='mobile-show fa-solid fa-graduation-cap'></i>", "<i class='mobile-show fa-solid fa-briefcase'></i>"];
+        return '<span class="' + className + '">' + titles[index] + icons[index] + "</span>";
       },
     },
   });
