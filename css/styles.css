@@ -24,8 +24,8 @@
 }
 
 html {
-overflow-x: hidden;
-scroll-behavior: smooth;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 body {
   position: relative;
@@ -106,91 +106,117 @@ a {
 }
 
 .social-icons {
-position: fixed;
-display: flex;
-flex-direction: column;
-flex-wrap: wrap;
-align-items: center;
-justify-content: space-evenly;
-background: rgba(109,125,153,0.45);
--webkit-backdrop-filter: blur(15px);
-backdrop-filter: blur(15px);
-padding: .5rem;
-border-top-left-radius: 1rem;
-border-bottom-left-radius: 1rem;
-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-height: 20rem;
-right: 0;
-top: 38%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  background: rgba(109,125,153,0.45);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  height: 20rem;
+  right: 0;
+  top: 38%;
+  padding: .5rem;
+  transition: all 0.5s ease-out;
+  animation: translateIn 0.1s ease-in-out forwards;
 }
 
 .social-icons a{
-display: flex;
-align-items: center;
-justify-content: center;
-padding: .2rem;
-height: 2rem;
-width: 2rem;
-text-decoration: none;
-transition: all 0.1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .2rem;
+  height: 2rem;
+  width: 2rem;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
 }
+
+.translate-out {
+  animation: translateOut 0.1s ease-in-out forwards;
+}
+
+@keyframes translateOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(300%);
+  }
+}
+
+@keyframes translateIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
 
 /* https://uiverse.io/PriyanshuGupta28/massive-ape-73 */
 .link-wrapper {
-position: relative;
-display: flex;
-justify-content: center;
-align-items: center;
-width: 40px;
-height: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
 }
 
 .link-wrapper a {
-height: 24px;
-width: 24px;
-position: absolute;
-z-index: 2;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  z-index: 2;
 }
 
 .link-wrapper .stroke-1 {
-position: absolute;
-z-index: 1;
-fill: none;
-stroke: #fff;
-stroke-miterlimit: 10;
-stroke-width: 2px;
-stroke-dashoffset: 100;
-stroke-dasharray: 100;
-transition: ease all 0.6s;
--webkit-transition: ease all 0.6s;
+  position: absolute;
+  z-index: 1;
+  fill: none;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+  stroke-dashoffset: 100;
+  stroke-dasharray: 100;
+  transition: ease all 0.6s;
+  -webkit-transition: ease all 0.6s;
 }
 
 .link-wrapper .stroke-2 {
-position: absolute;
-z-index: 1;
-fill: none;
-stroke: #fff;
-stroke-miterlimit: 10;
-stroke-width: 2px;
-stroke-dashoffset: -100;
-stroke-dasharray: 100;
-transform: scaleX(-1);
-transform-origin: center;
-transition: ease all 0.6s;
--webkit-transition: ease all 0.6s;
+  position: absolute;
+  z-index: 1;
+  fill: none;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+  stroke-dashoffset: -100;
+  stroke-dasharray: 100;
+  transform: scaleX(-1);
+  transform-origin: center;
+  transition: ease all 0.6s;
+  -webkit-transition: ease all 0.6s;
 }
 .link-wrapper a:hover + svg .stroke-1 {
-position: absolute;
-z-index: 1;
-stroke-dashoffset: 2.9;
-stroke-dasharray: 50;
+  position: absolute;
+  z-index: 1;
+  stroke-dashoffset: 2.9;
+  stroke-dasharray: 50;
 }
 
 .link-wrapper a:hover + svg .stroke-2 {
-position: absolute;
-z-index: 1;
-stroke-dashoffset: -47;
-stroke-dasharray: 50;
+  position: absolute;
+  z-index: 1;
+  stroke-dashoffset: -47;
+  stroke-dasharray: 50;
 }
 
 .tooltip {
@@ -296,7 +322,7 @@ flex-direction: row;
   right: 0;
   left: 0;
   height: calc(45% - 5px);
-  border: 1px solid var(--neutral-color);
+  border: 1px solid var(--text-dark);
   transition: all .15s ease;
 }
 
@@ -1187,7 +1213,6 @@ flex-direction: row;
   font-size: 1.25rem;
   text-align: justify;
   height: auto;
-
 }
 
 .back-card .back-content .content .lang-used {
@@ -1279,304 +1304,401 @@ flex-direction: row;
 /* https://www.youtube.com/watch?v=BMphVl9suxA */
 
 .contacts-content {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-content: center;
-width: 100%;
-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 40%;
+  min-height: 70vh;
+  padding: 1rem;
+  background: var(--background-dark);
+  border-radius: 1rem;
+}
+
+.contacts-content h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: var(--cta-color);
+  margin: 1rem 0;
 }
 
 .form-container {
-display: flex;
-flex-wrap: wrap;
-flex-direction: column;
-align-content: center;
-justify-content: center;
-width: 50%;
-height: 50%;
-background: var(--background-dark);
-border-radius: 1rem;
-}
-.contact-container, .contact-image-container {
-display: flex;
-flex-wrap: wrap;
-flex-direction: column;
-align-content: center;
-justify-content: center;
-gap: 1rem;
-height: 100%;
-width: 50%;
-}
-.contact-image-container img {
-width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+  width: 90%;
 }
 
 .inputBox {
-position: relative;
-width: 70%;
-}
-
-.inputBox textarea {
-height: 80%;
-resize: none;
+  position: relative;
+  width: 60%;
 }
 
 .inputBox input, textarea {
-height: 1.5rem;
-width: 100%;
-padding: .5rem;
-border: 1px solid var(--text-dark);
-color:  var(--text-dark);
-background: transparent;
-border-radius: 1rem;
-outline: none;
-font-size: 1rem;
-transition: all 0.5s ease-in-out;
+  height: 1.5rem;
+  width: 96%;
+  padding: 2%;
+  border: 1px solid var(--text-dark);
+  color:  var(--text-dark);
+  font-size: 1rem;
+  background: transparent;
+  border-radius: .5rem;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.inputBox textarea {
+  height: 10rem;
+  resize: none;
 }
 
 .inputBox .input-span {
-position: absolute;
-top: 0;        
-padding: .5rem 0 0 1rem;
-pointer-events: none;
-color:  var(--text-dark);
-text-transform: uppercase;
-transition: .2s;
+  position: absolute;
+  top: 0;
+  padding: .5rem 0 0 1rem;
+  pointer-events: none;
+  color:  var(--text-dark);
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: .2s;
+}
+
+.inputBox .input-span span{
+  color: var(--secondary-dark);
 }
 
 .inputBox input:valid ~ .input-span,
 .inputBox input:focus ~ .input-span,
 .inputBox textarea:valid ~ .input-span,
 .inputBox textarea:focus ~ .input-span {
-color:  var(--neon-color);
-transform: translateX(10px) translateY(-7px);
-font-size: 0.75rem;
-padding: 0 10px;
-background: var(--background-dark);
-border-left: 1px solid var(--neon-color);
-border-right: 1px solid var(--neon-color);
-letter-spacing: .1rem;
+  color:  var(--cta-color);
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.75rem;
+  padding: 0 10px;
+  background: var(--background-dark);
+  border-left: 1px solid var(--cta-color);
+  border-right: 1px solid var(--cta-color);
+  letter-spacing: .1rem;
+}
+
+.inputBox input:valid ~ .input-span span,
+.inputBox input:focus ~ .input-span span,
+.inputBox textarea:valid ~ .input-span span,
+.inputBox textarea:focus ~ .input-span span {
+  display: none;
 }
 
 .inputBox input:valid,
 .inputBox input:focus,
 .inputBox textarea:valid,
 .inputBox textarea:focus {
-border: 1px solid var(--neon-color);
+  border: 1px solid var(--cta-color);
+}
+.invalidEmail {
+  position: absolute;
+  top: 0;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.75rem;
+  padding: 0 10px;
+  text-transform: uppercase;
+  background: var(--secondary-dark);
+  color: var(--text-dark);
+  border-left: 1px solid var(--secondary-dark);
+  border-right: 1px solid var(--secondary-dark);
+  letter-spacing: .1rem;
+  transition: .5s all;
 }
 
-.invalidEmail {
-position: absolute;
-top: 0;
-transform: translateX(10px) translateY(-7px);
-font-size: 0.75rem;
-padding: 0 10px;
-text-transform: uppercase;
-background: var(--secondary-dark);
-color: var(--text-dark);
-border-left: 1px solid var(--secondary-dark);
-border-right: 1px solid var(--secondary-dark);
-letter-spacing: .1rem;
-transition: .5s all;
-}
+/* https://uiverse.io/TISEPSE/perfect-pig-59 */
 
 .contact-button {
-display: flex;
-align-self: center;
-height: 7%;
-width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.contact-button button {
-background-color: var(--neutral-color);
-color: var(--text-dark);
-width: 100%;
-border: none;
-border-radius: .5rem;
-transition: all 0.3s ease;
+.disabled-button {
+  cursor: not-allowed;
 }
 
-.contact-button .send-mail-btn {
-background-color: var(--neon-color);
-color: var(--text-dark);
-width: 100%;
-border: none;
-border-radius: .5rem;
-cursor: pointer;
-transition: all 0.3s ease;
+.contact-button .button_lg .button_sl {
+  background-color: var(--neutral-color);
 }
 
-.contact-button .send-mail-btn:hover {
-background-color: #00dfc4;
-color: var(--text-dark);
-transform: scale(1.1);
-transition: all .1s;
-box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.2);
+.contact-tooltip {
+  text-align: center;
 }
+
+.contact-social-icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.contact-social-icons a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .2rem;
+  height: 2rem;
+  width: 2rem;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+}
+
+/* https://uiverse.io/G4b413l/pretty-fireant-44 */
+
+.contact-social-icons .card img {
+  height: 50px;
+}
+
+.contact-social-icons .card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  width: 50%;
+  padding: 1rem 0;
+}
+
+.contact-social-icons .card::before, .card::after {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 80%;
+  transition: 0.25s linear;
+  z-index: 1;
+}
+
+.contact-social-icons .card::before {
+  content: "";
+  left: 0;
+  justify-content: flex-end;
+  background-color: #4d60b6;
+}
+
+.contact-social-icons .card::after {
+  content: "";
+  right: 0;
+  justify-content: flex-start;
+  background-color: #4453a6;
+}
+
+.contact-social-icons .card:hover span {
+  opacity: 0;
+  z-index: -3;
+}
+
+.contact-social-icons .card:hover::before {
+  opacity: 0.5;
+  transform: translateY(-150%);
+}
+
+.contact-social-icons .card:hover::after {
+  opacity: 0.5;
+  transform: translateY(150%);
+}
+
+.contact-social-icons .card span {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--text-dark);
+  font-family: 'Fira Mono', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.25s;
+  z-index: 2;
+}
+
+.contact-social-icons .card .social-link img {
+  text-shadow: 1px 1px rgba(31, 74, 121, 0.7);
+  transform: scale(1);
+}
+
+.contact-social-icons .card .social-link:hover {
+  animation: bounce_613 0.4s linear;
+}
+
+@keyframes bounce_613 {
+  40% {
+    transform: scale(1.4);
+  }
+
+  60% {
+    transform: scale(0.8);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.contact-social-tooltip {
+  position: relative;
+  bottom: -5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  width: 5rem;
+  opacity: 0;
+  color: white;
+  padding: 5px 10px;
+  border: 1px solid var(--text-dark);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: .2s;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+}
+
+/* https://uiverse.io/vinodjangid07/afraid-falcon-17 */
 
 .back-to-top {
-  position: absolute;
-  bottom: 3.5%;
-  right: 8%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  right: -40%;
+  bottom: -5px;
 }
-
-.back-to-top button {
-  width: 60px;
-  height: 60px;
-  bottom: 40px;
-  right: 40px;
-  background-color: var(--neutral-color);
-  color: #FFF;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 2px 2px 3px #999;
-  z-index: 100;
+.back-to-top-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
   border: none;
-  transition: 0.5s;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
 }
 
-.back-to-top button:hover {
-  background-color: var(--cta-color);
-  transform: scale(1.1);
+.svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
 }
 
-.back-to-top button:active {
-  background-color: #e7b842;
+.svgIcon path {
+  fill: white;
 }
 
-.arrow-up {
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 35%;
-  margin-bottom: 60%;
-  border-bottom: 15px solid white;
+.back-to-top-button:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(181, 160, 255);
+  align-items: center;
+}
+
+.back-to-top-button:hover .svgIcon {
+  /* width: 20px; */
+  transition-duration: 0.3s;
+  transform: translateY(-200%);
+}
+
+.back-to-top-button::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Back to Top";
+  color: white;
+  /* transition-duration: .3s; */
+  font-size: 0px;
+}
+
+.back-to-top-button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+  /* transform: translateY(-30px); */
+  transition-duration: 0.3s;
 }
 
 
 @media screen and (max-width: 1440px) {
-.form-container {
-  width: 80%;
-}
-}
 
-.back-to-top {
-  bottom: 4%;
-  right: 10%;
-}
-
-@media  screen and (max-width: 1320px) {
-  .back-to-top {
-    bottom: 4%;
-    right: 10%;
+  .contacts-content {
+    width: 60%;
   }
-}
-
-@media screen and (max-width: 1024px) {
-  .back-to-top {
-    bottom: 4%;
+  
+  .contacts-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .form-container {
+    width: 100%;
+  }
+  
+  .inputBox {
+    width: 70%;
+  }
+  
+  .contact-social-icons .card img {
+    height: 50px;
   }
 }
 
 @media screen and (max-width: 768px) {
 
-.form-container {
-  width: 70%;
+  .contacts-content {
+    width: 70%;
+  }
+
+  .contacts-content h1 {
+    line-height: 2rem;
+  }
+
+  .contact-social-icons .card img {
+    height: 35px;
+  }
+  
+  .contact-social-icons .card {
+    width: 70%;
+  }
+  
+  .contact-social-icons .card::before, .card::after {
+    height: 70%;
+  }
+
+  .inputBox .input-span {
+    font-size: .8rem;
+  }
 }
 
-.contact-image-container {
-  display: none;
-}
-
-.contact-container {
-  width: 80%;
-}
-
-.inputBox {
-  position: relative;
-  width: 93%;
-  margin-right: 4%;
-}
-
-.inputBox textarea {
-  height: 80%;
-}
-
-.contact-button {
-  height: 7%;
-  width: 50%;
-}
-
-.back-to-top {
-  bottom: 4%;
-  right: 10%;
-}
-.back-to-top {
-  bottom: 6%;
-  right: 10%;
-}
-}
-
-@media screen and (max-width: 471px) {
-  .cards-tooltip {
+@media screen and (max-width: 425px) {
+  .contacts-content {
     width: 90%;
-    margin: 0;
-  }  
-}
+  }
 
-@media  screen and (max-width: 425px) {
-
-.form-container {
-  width: 100%;
-}  
-
-.inputBox input, textarea {
-  font-size: .8rem;
-}
-
-.inputBox .input-span {   
-  padding: .75rem 0 0 1rem;
-  font-size: .8rem;
-}
-
-.inputBox input:valid ~ .input-span,
-.inputBox input:focus ~ .input-span,
-.inputBox textarea:valid ~ .input-span,
-.inputBox textarea:focus ~ .input-span {
-  font-size: 0.6rem;
-}
-
-.invalidEmail {
-  font-size: 0.6rem;
-}
-
-#span_email svg {
-  font-size: 0.6rem;
-}
-
-.contact-button button {
-  font-size: .8rem;
-}
-
-.back-to-top {
-  bottom: 6%;
-  right: 10%;
-}
-}
-
-@media  screen and (max-width: 320px) {
-
-.form-container {
-  width: 100%;
-}
-
-.back-to-top {
-  bottom: 6%;
-  right: 10%;
-}
+  .contacts-content h1 {
+    font-size: 2rem;
+  }
 }

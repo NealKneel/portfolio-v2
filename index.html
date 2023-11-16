@@ -12,11 +12,10 @@
   <script defer src="./js/scripts.js"></script> <!--Scripts-->
   <script defer src="./js/nav.js"></script> <!--Navbar Scripts-->
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script> <!--Typed.js-->
-
-
-      <!--Email JS-->
-      <script defer src="./js/email.js"></script>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!--Email JS-->
+  <script defer src="./js/email.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!--SweetAlert-->
   <script src="https://unpkg.com/scrollreveal"></script>  <!--ScrollReveal JS-->
   <title>NAM's Portfolio</title>
   <link rel="icon" type="image/x-icon" href="./assets/images/download20231003184650.png" favicon>
@@ -107,7 +106,7 @@
     </ul>
   </div>
   <main>
-    <div class="social-icons scroll-reveal-1 right">
+    <div class="social-icons scroll-reveal-1 right" id="socialIcons">
       <div class="link-wrapper">
         <a href="https://www.facebook.com/NealAndrusM/" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/>
@@ -425,41 +424,69 @@
 
     <section class="main-section" id="contacts">
       <div class="contacts-content">
+        <h1>Contact Form</h1>
         <div class="form-container">
-          <div class="contact-container">
               <div class="inputBox">
                   <input type="text" id="user_name" autocomplete="off" required="required">
-                  <span class="input-span">Name</span>
+                  <span class="input-span">Name <span>*</span></span>
               </div>
               <div class="inputBox">
                   <input type="tel" id="user_number" required="required">
-                  <span class="input-span">Contact Number</span>
+                  <span class="input-span">Contact Number <span>*</span></span>
           
               </div>
               <div class="inputBox">
                   <input type="email" id="user_email" autocomplete="off" required="required">
-                  <span class="input-span" id="span_email">Email</span>
+                  <span class="input-span" id="span_email">Email <span>*</span></span>
               </div>
               <div class="inputBox">
                   <input type="text" id="subject" required="required">
-                  <span class="input-span">Subject</span>
+                  <span class="input-span">Subject <span>*</span></span>
               </div>
               <div class="inputBox">
                   <textarea id="message" required="required"></textarea>
-                  <span class="input-span">Message</span>
+                  <span class="input-span">Message <span>*</span></span>
               </div>
               <div class="contact-button">
-                  <button class="send-mail-btn" id="sendMailBtn" onclick="SendMail()">Send</button>
+                  <button class="button" id="sendMailBtn" disabled>
+                    <span class="button_lg">
+                        <span class="button_sl" id="buttonColor"></span>
+                        <span class="button_text">SEND MESSAGE</span>
+                    </span>
+                  </button>
+                  <!-- <button id="sweetyBtn">Sweety</button> -->
+                <span class="contact-tooltip" id="contactTooltip">Fill out the fields.</span>
               </div>
-          </div>
-          <div class="contact-image-container">
-              <img src="./assets/images/email.png" alt="Freepik Image">
+        </div>
+        <div class="contact-social-icons">
+          <div class="card">
+            <span>Socials</span>
+            <a class="social-link" href="https://www.facebook.com/NealAndrusM/" target="_blank">
+              <img src="./assets/icons/icons8-facebook-512.png" alt="Facebook Icon">
+            </a>
+            <a class="social-link" href="https://www.linkedin.com/in/neal-mancilla-563510280/" target="_blank">
+              <img src="./assets/icons/icons8-linkedin-512.png" alt="LinkedIn Icon">
+            </a>
+            <a class="social-link" href="https://github.com/NealKneel" target="_blank">
+              <img src="./assets/icons/icons8-github-512.png" alt="Github Icon">
+            </a>
+            <a class="social-link contact-discord" onmouseover="showTooltip()" onmouseleave="hideTooltip()">
+              <img src="./assets/icons/icons8-discord-512.png" alt="Discord Icon">
+            </a>
+            <a class="social-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+              <img src="./assets/icons/icons8-youtube-512.png" alt="Youtube Icon">
+            </a>
           </div>
         </div>
       </div>
+      <span class="contact-social-tooltip" id="contactSocialTooltip">kneel_20</span>
       <div class="back-to-top">
-        <button id="scrollTopButton">
-          <div class="arrow-up"></div>
+        <button class="back-to-top-button" id="scrollTopButton">
+          <svg class="svgIcon" viewBox="0 0 384 512">
+            <path
+              d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+            ></path>
+          </svg>
         </button>
       </div>
     </section>
@@ -473,7 +500,6 @@
 
         <div class="footer-container">
           <ul class="attribution">
-            <li><b>Images and Icons</b></li>
             <li><a target="_blank" href="https://icons8.com/icon/23027/html-5">Html 5</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></li>
             <li><a target="_blank" href="https://icons8.com/icon/38273/css3">CSS</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></li>
             <li><a target="_blank" href="https://icons8.com/icon/39853/javascript">JavaScript</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></li>
@@ -489,21 +515,24 @@
             <li><a target="_blank" href="https://icons8.com/icon/13677/adobe-photoshop">Photoshop</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></li>
             <li><a target="_blank" href="https://icons8.com/icon/YqBipuWu6jG6/adobe-premiere-pro">Adobe Premiere Pro</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></li>
             <li><a target="_blank" href="https://icons8.com/icon/baWsXpPZGhGu/filmora">Filmora</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></li>
-            <li>Programming and Media Editing icons provided by <a href="https://www.flaticon.com/free-icons" target="_blank">Flaticons</a> and <a href="https://icons8.com/icons" target="_blank">Icons8</a>
-            <li>Social icons provided by <a href="https://fontawesome.com" target="_blank">Font Awesome (Font Awesome Pro 6.4.2) by Fonticons, Inc.</a></li>
-            <li>Communication illustrations by <a href="https://storyset.com/communication" target="_blank">Storyset (Contact Image)</a></li>
-            <li>Work illustrations by <a href="https://storyset.com/work" target="_blank">Storyset (Home Image)</a></li>
           </ul>
         </div>
 
         <div class="footer-container">
           <ul class="resources">
-            <li><b>Third-party resources</b></li>
             <li><a href="https://swiperjs.com/" target="_blank">SwiperJS</a></li>
             <li><a href="https://github.com/mattboldt/typed.js" target="_blank">TypedJS</a></li>
             <li><a href="https://www.emailjs.com/" target="_blank">EmailJS</a></li>
+            <li><a target="_blank" href="https://sweetalert2.github.io/">SweetAlert2</a></li>
             <li><a href="https://scrollrevealjs.org/" target="_blank">ScrollRevealJS</a></li>
             <li><a href="https://uiverse.io/" target="_blank">Button Animations</a></li>
+            <li><a target="_blank" href="https://icons8.com/icon/yGcWL8copNNQ/facebook">Facebook</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></li>
+            <li><a target="_blank" href="https://icons8.com/icon/xuvGCOXi8Wyg/linkedin">LinkedIn</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></li>
+            <li><a target="_blank" href="https://icons8.com/icon/SAZw8WuWnQea/discord-bubble">Discord</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></li>
+            <li><a target="_blank" href="https://icons8.com/icon/9a46bTk3awwI/youtube">YouTube</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></li>
+            <li><a target="_blank" href="https://icons8.com/icon/AZOZNnY73haj/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></li>
+            <li>Social icons provided by <a href="https://fontawesome.com" target="_blank">Font Awesome (Font Awesome Pro 6.4.2) by Fonticons, Inc.</a></li>
+            <li>Work illustrations by <a href="https://storyset.com/work" target="_blank">Storyset (Home Image)</a></li>
           </ul>
         </div>
       </div>

@@ -6,41 +6,28 @@ var typed = new Typed(".auto-type", {
     loop: true
 })
 
+//////////////////////////SOCIAL ICONS///////////////////////////////
+
+document.addEventListener("DOMContentLoaded", function () {
+    var socialIcons = document.getElementById("socialIcons");
+    var contactsSection = document.getElementById("contacts");
+  
+    var observer = new IntersectionObserver(
+      function (entries) {
+        socialIcons.classList.toggle("translate-out", entries[0].isIntersecting);
+      },
+      {
+        threshold: 0.7, // Adjust the threshold as needed (0.5 means 50% visibility)
+      }
+    );
+  
+    observer.observe(contactsSection);
+  });
+  
+  
 ///////////////////ABOUT////////////////////
 
-// function scrollToContent(contentId) {
-//     const element = document.getElementById(contentId);
-//     if (element) {
-//       element.scrollIntoView({ 
-//         behavior: 'smooth',
-//         block: 'nearest',
-//     });
-//     }
-//   }
-
 // SwiperJS
-
-// var swiper = new Swiper(".aboutSwiper", {
-//     pagination: {
-//       el: ".mobile-pagination-hide",
-//       clickable: true,
-//       renderBullet: function (index, className) {
-//         const titles = ["ABOUT ME", "EDUCATIONAL BACKGROUND", "EXPERIENCES"];
-//         return '<span class="mobile-hide ' + className + '">' + titles[index] + "</span>";
-//       },
-//     },
-//   });
-
-// var swiper = new Swiper(".aboutSwiper", {
-//     pagination: {
-//       el: ".mobile-pagination-show",
-//       clickable: true,
-//       renderBullet: function (index, className) {
-//         const titles = ["<i class='fa-regular fa-id-badge'></i>", "<i class='fa-solid fa-graduation-cap'></i>", "<i class='fa-solid fa-briefcase'></i>"];
-//         return '<span class="mobile-show ' + className + '">' + titles[index] + "</span>";
-//       },
-//     },
-//   });
 
   var swiper = new Swiper(".aboutSwiper", {
     pagination: {
@@ -53,32 +40,6 @@ var typed = new Typed(".auto-type", {
       },
     },
   });
-
-function scrollToContent(contentId) {
-    const element = document.getElementById(contentId);
-    centerElementInView('.about-content');
-    if (element) {
-        element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'nearest',
-        });
-
-    }
-}
-
-function centerElementInView(selector) {
-    const element = document.querySelector(selector);
-    if (element) {
-        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-        const elementHeight = element.offsetHeight;
-        const offset = (viewportHeight - elementHeight) / 2;
-        
-        window.scrollTo({
-            top: element.offsetTop - offset,
-            behavior: 'smooth',
-        });
-    }
-}
 
 const scrollTopButton = document.getElementById('scrollTopButton');
 
@@ -124,6 +85,8 @@ var swiper = new Swiper(".mySwiper", {
 const sendMailBtn = document.getElementById("sendMailBtn");
 const inputFields = document.querySelectorAll(".inputBox input");
 const textarea = document.getElementById("message");
+const btnHover = document.getElementById("buttonColor");
+const contactTooltip = document.getElementById("contactTooltip");
 
 // Function to check if all input fields and the textarea are not empty
 function checkFields() {
@@ -139,11 +102,25 @@ function checkFields() {
 function toggleButtonState() {
     if (checkFields()) {
         sendMailBtn.removeAttribute("disabled");
-        sendMailBtn.classList.add("send-mail-btn");
+        sendMailBtn.classList.remove("disabled-button");
+        btnHover.style.backgroundColor = "#FFD166";
+        contactTooltip.style.display = "none";
     } else {
         sendMailBtn.setAttribute("disabled", true);
-        sendMailBtn.classList.remove("send-mail-btn");
+        sendMailBtn.classList.add("disabled-button");
+        btnHover.style.backgroundColor = "#B8B8B8";
+        contactTooltip.style.display = "block";
     }
+}
+
+const contactDiscord = document.getElementById('contactSocialTooltip');
+
+function showTooltip() {
+  contactDiscord.style.opacity ="1";
+}
+
+function hideTooltip() {
+  contactDiscord.style.opacity ="0";
 }
 
 // Add event listeners to input fields and textarea for real-time validation
@@ -166,7 +143,7 @@ const sendBtn = document.getElementById("sendMailBtn");
       if (this.value === "") {
           spanEmail.classList.remove('invalidEmail');
           spanEmail.classList.add('input-span');
-          spanEmail.innerHTML = 'Email';
+          spanEmail.innerHTML = 'Email <span>*</span>';
       }
       else if (isValidEmail(this.value)) {
           spanEmail.classList.add('input-span');
