@@ -1097,7 +1097,7 @@ flex-direction: row;
 .projects-content {
   display: flex;
   width: 100%;
-  min-height: 85vh;
+  min-height: 90vh;
 }
 
 .projects-content .swiper {
